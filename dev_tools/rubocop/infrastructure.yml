@@ -11,3 +11,5 @@ Style/StringLiterals:
   EnforcedStyle: double_quotes
 Style/StringLiteralsInInterpolation:
   EnforcedStyle: double_quotes
+Bundler/OrderedGems
+  Enabled: false
