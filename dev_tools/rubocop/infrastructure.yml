@@ -1,6 +1,6 @@
 inherit_from: base.yml
 
-Bundler/OrderedGems
+Bundler/OrderedGems:
   Enabled: false
 
 Metrics/LineLength:
