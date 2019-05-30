@@ -3,6 +3,11 @@ inherit_from: base.yml
 Bundler/OrderedGems:
   Enabled: false
 
+Metrics/BlockLength:
+  ExcludedMethods:
+    - context
+    - describe
+
 Metrics/LineLength:
   Max: 120
 
