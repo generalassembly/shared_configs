@@ -1,4 +1,5 @@
 AllCops:
   Exclude:
     - 'bin/{rails,rake}'
-    - 'db/**/*'
+    - 'db/migrate/*'
+    - 'db/schema.rb'
