@@ -13,6 +13,9 @@ A collection of shared configuration files.
 If this repository is located in `~/code/shared_configs` and you're in the
 top-level directory of another project:
 
-#### Set up symlink
+**Set up symlink:** `ln -s ~/code/shared_configs/dev_tools/rubocop/ .rubocop`
 
-`ln -s ~/code/shared_configs/dev_tools/rubocop/ .rubocop`
+#### Rubocop resources:
+
+* [Sublime](https://www.sublimetext.com/) package:
+  [SublimeLinter-rubocop](https://github.com/SublimeLinter/SublimeLinter-rubocop)
