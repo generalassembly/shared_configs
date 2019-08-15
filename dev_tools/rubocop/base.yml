@@ -3,3 +3,4 @@ AllCops:
     - 'bin/{rails,rake}'
     - 'db/migrate/*'
     - 'db/schema.rb'
+    - 'node_modules/**/*'
