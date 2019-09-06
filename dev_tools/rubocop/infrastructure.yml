@@ -9,6 +9,8 @@ Metrics/BlockLength:
     - define
     - describe
     - factory
+    - shared_examples
+    - shared_examples_for
 
 Metrics/LineLength:
   Max: 120
