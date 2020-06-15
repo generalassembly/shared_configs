@@ -1,5 +1,9 @@
 inherit_from: base.yml
 
+require:
+  - rubocop-performance
+  - rubocop-rspec
+
 Bundler/OrderedGems:
   Enabled: false
 
