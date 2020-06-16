@@ -7,15 +7,6 @@ require:
 Bundler/OrderedGems:
   Enabled: false
 
-Metrics/BlockLength:
-  ExcludedMethods:
-    - context
-    - define
-    - describe
-    - factory
-    - shared_examples
-    - shared_examples_for
-
 Layout/LineLength:
   Max: 120
 
