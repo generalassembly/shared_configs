@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+
+# frozen_string_literal: true
+
+require "open3"
+
+DEFAULT_OPTIONS = %w[-P --only-recognized-file-types --force-exclusion].freeze
+
+PARALLEL_OPTIONS = %w[--parallel -P].freeze
+AUTO_CORRECT_OPTIONS = %w[--auto-correct -a].freeze
+
+DIFF_FILENAMES_CMD = "git diff master --name-only --diff-filter=AM"
+
+project_root, std_error = Open3.capture3("git rev-parse --show-toplevel")
+abort std_error unless std_error.empty?
+
+project_root.strip!
+abort "error: must be run from '#{project_root}'" unless Dir.pwd == project_root
+
+abort "error: no diffs found" if `#{DIFF_FILENAMES_CMD}`.empty?
+
+options = DEFAULT_OPTIONS + ARGV
+options -= PARALLEL_OPTIONS if (options & AUTO_CORRECT_OPTIONS).any?
+options = options.uniq.join(" ")
+
+system "bundle exec rubocop #{options} $(#{DIFF_FILENAMES_CMD})"
