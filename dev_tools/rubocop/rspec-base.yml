@@ -1,8 +1,6 @@
 require:
   - rubocop-rspec
 
-# RSpec
-
 RSpec/DescribeClass:
   Exclude:
     - spec/features/**/*
