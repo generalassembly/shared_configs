@@ -1,3 +1,7 @@
+require:
+- rubocop-performance
+- rubocop-thread_safety
+
 AllCops:
   NewCops: enable
 

@@ -1,0 +1,5 @@
+* @generalassembly/infrastructure
+dev_tools/rubocop/base.yml @generalassembly/infrastructure @generalassembly/edtech @generalassembly/martech @generalassembly/engineering-support
+dev_tools/rubocop/infrastructure.yml @generalassembly/infrastructure
+dev_tools/rubocop/edtech.yml @generalassembly/edtech
+dev_tools/rubocop/martech.yml @generalassembly/martech
