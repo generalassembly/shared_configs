@@ -3,7 +3,7 @@
 # Base config files
 dev_tools/rubocop/base.yml @generalassembly/infrastructure @generalassembly/edtech @generalassembly/martech @generalassembly/engineering-support
 dev_tools/rubocop/rails-base.yml @generalassembly/infrastructure @generalassembly/edtech @generalassembly/martech @generalassembly/engineering-support
-dev_tools/rubocop/rpsec-base.yml @generalassembly/infrastructure @generalassembly/edtech @generalassembly/martech @generalassembly/engineering-support
+dev_tools/rubocop/rspec-base.yml @generalassembly/infrastructure @generalassembly/edtech @generalassembly/martech @generalassembly/engineering-support
 
 # Infrastructure config files
 dev_tools/rubocop/infrastructure.yml @generalassembly/infrastructure
