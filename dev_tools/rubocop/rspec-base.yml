@@ -1,0 +1,11 @@
+require:
+- rubocop-rspec
+
+# RSpec
+
+RSpec/DescribeClass:
+  Exclude:
+    - spec/features/**/*
+    - spec/integration/**/*
+    - spec/requests/**/*
+    - spec/routing/**/*
