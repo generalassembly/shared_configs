@@ -1,1 +1,2 @@
-inherit_from: base.yml
+inherit_from:
+  - base.yml

@@ -1,4 +1,5 @@
-inherit_from: base.yml
+inherit_from:
+  - base.yml
 
 Bundler/OrderedGems:
   Enabled: false
