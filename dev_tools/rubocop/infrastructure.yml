@@ -1,8 +1,5 @@
-inherit_from: base.yml
-
-require:
-  - rubocop-performance
-  - rubocop-rspec
+inherit_from:
+  - base.yml
 
 Bundler/OrderedGems:
   Enabled: false
@@ -18,12 +15,3 @@ Style/StringLiterals:
 
 Style/StringLiteralsInInterpolation:
   EnforcedStyle: double_quotes
-
-# RSpec
-
-RSpec/DescribeClass:
-  Exclude:
-    - spec/features/**/*
-    - spec/integration/**/*
-    - spec/requests/**/*
-    - spec/routing/**/*

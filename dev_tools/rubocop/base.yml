@@ -1,3 +1,11 @@
+inherit_mode:
+  merge:
+    - Exclude
+
+require:
+  - rubocop-performance
+  - rubocop-thread_safety
+
 AllCops:
   NewCops: enable
 

@@ -1,0 +1,4 @@
+inherit_from:
+  - rails-base.yml
+  - rspec-base.yml
+  - infrastructure.yml
