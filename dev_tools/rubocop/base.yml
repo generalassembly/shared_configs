@@ -1,5 +1,6 @@
 inherit_mode:
   merge:
+    - Environments
     - Exclude
 
 require:
