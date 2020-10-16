@@ -1,9 +1,2 @@
 require:
   - rubocop-rails
-
-Rails/UnknownEnv:
-  Environments:
-    - development
-    - production
-    - staging
-    - test
