@@ -7,7 +7,7 @@ require "open3"
 DEFAULT_OPTIONS = %w[-P --only-recognized-file-types --force-exclusion].freeze
 
 PARALLEL_OPTIONS = %w[--parallel -P].freeze
-AUTO_CORRECT_OPTIONS = %w[--auto-correct -a].freeze
+AUTO_CORRECT_OPTIONS = %w[--auto-correct -a --auto-correct-all -A].freeze
 
 DIFF_FILENAMES_CMD = "git diff master --name-only --diff-filter=AM"
 
