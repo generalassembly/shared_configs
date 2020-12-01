@@ -1,2 +1,6 @@
 require:
   - rubocop-rails
+
+Lint/UselessAccessModifier:
+  ContextCreatingMethods:
+    - concerning
