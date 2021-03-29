@@ -6,7 +6,13 @@ A collection of shared configuration files.
 
 ## Contents
 
+* [Scripts](#scripts)
 * [Rubocop](#rubocop)
+
+### Scripts
+
+You can call either these scripts directly or add this repository's `scripts`
+directory to your `PATH` to easily access them from anywhere.
 
 ### Rubocop
 
