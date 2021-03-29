@@ -14,7 +14,7 @@ end
 
 branch = `git branch --show-current`.strip
 
-workflows = `sem get workflows`.split("\n")
+workflows = `sem get workflows`.lines
 
 begin
   workflow_row = workflows.find { |workflow| workflow.match?(branch) }
@@ -25,4 +25,4 @@ end
 
 workflow_url = "https://generalassembly.semaphoreci.com/workflows/#{workflow_id}"
 
-system "open #{workflow_url}"
+system 'open', workflow_url
