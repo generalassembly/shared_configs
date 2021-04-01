@@ -6,7 +6,16 @@ A collection of shared configuration files.
 
 ## Contents
 
+* [Scripts](#scripts)
 * [Rubocop](#rubocop)
+
+### Scripts
+
+You can either call these scripts directly or add this repository's `scripts`
+directory to your `PATH` to easily access them from anywhere.
+
+* [cop-diffs](/dev_tools/scripts/cop-diffs): runs Rubocop on the changed files in your branch
+* [scw](/dev_tools/scripts/scw): opens the current Semaphore workflow for your branch
 
 ### Rubocop
 

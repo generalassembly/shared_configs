@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+
+# frozen_string_literal: true
+
+if `command -v sem`.empty?
+  abort <<~ERROR
+    sem CLI not found
+
+    brew install semaphoreci/tap/sem
+
+    docs: https://docs.semaphoreci.com/reference/sem-command-line-tool/
+  ERROR
+end
+
+branch = `git branch --show-current`.strip
+
+workflows = `sem get workflows`.lines
+
+begin
+  workflow_row = workflows.find { |workflow| workflow.match?(branch) }
+  workflow_id = workflow_row.split.first
+rescue NoMethodError
+  abort 'workflow not found'
+end
+
+workflow_url = "https://generalassembly.semaphoreci.com/workflows/#{workflow_id}"
+
+system 'open', workflow_url
