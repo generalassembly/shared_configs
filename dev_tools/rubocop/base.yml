@@ -1,5 +1,6 @@
 inherit_mode:
   merge:
+    - CountAsOne
     - Environments
     - Exclude
 
@@ -22,3 +23,25 @@ Metrics/BlockLength:
   Exclude:
     - config/**/*
     - spec/**/*
+  CountAsOne:
+    - array
+    - hash
+    - heredoc
+
+Metrics/ClassLength:
+  CountAsOne:
+    - array
+    - hash
+    - heredoc
+
+Metrics/MethodLength:
+  CountAsOne:
+    - array
+    - hash
+    - heredoc
+
+Metrics/ModuleLength:
+  CountAsOne:
+    - array
+    - hash
+    - heredoc
