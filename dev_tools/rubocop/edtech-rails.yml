@@ -1,3 +1,4 @@
 inherit_from:
   - rails-base.yml
+  - rspec-base.yml
   - edtech.yml
