@@ -45,3 +45,6 @@ Metrics/ModuleLength:
     - array
     - hash
     - heredoc
+
+Style/Documentation:
+  Enabled: false
