@@ -17,7 +17,6 @@ AllCops:
     - db/schema.rb
     - "**/node_modules/**/*"
     - script/**/*
-    - vendor/**/*
 
 Metrics/BlockLength:
   Exclude:
