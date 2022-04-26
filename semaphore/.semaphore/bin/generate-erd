@@ -1,0 +1,11 @@
+#!/usr/bin/env -S bash -e
+
+bundle exec erd
+
+if [[ $SEMAPHORE_GIT_BRANCH =~ ^(master|main)$ ]]; then
+  ARTIFACT_LEVEL=project
+else
+  ARTIFACT_LEVEL=workflow
+fi
+
+artifact push $ARTIFACT_LEVEL erd.pdf -d ERD-$SEMAPHORE_PROJECT_NAME.pdf -f
