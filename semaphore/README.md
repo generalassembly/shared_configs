@@ -37,7 +37,7 @@ LOCAL_SHARED_CONFIG_DIR=.semaphore-shared
 
 svn export $REMOTE_SHARED_CONFIG_DIR $LOCAL_SHARED_CONFIG_DIR
 
-cp --recursive --no-clobber $LOCAL_SHARED_CONFIG_DIR/* .semaphore/
+cp --recursive --no-clobber $LOCAL_SHARED_CONFIG_DIR/. .semaphore/
 
 ```
 
