@@ -1,17 +1,18 @@
 # Shared Semaphore Config
 
-## [.semaphore/](https://github.com/generalassembly/shared_configs/tree/master/semaphore/.semaphore)
+## [.semaphore/](.semaphore/)
 
 This directory contains shared config that can be automatically copied over to other repos.
 
 The directory structure matches the standard `.semaphore` directory in each repo.
 
-## [templates/](https://github.com/generalassembly/shared_configs/tree/master/semaphore/templates)
+## [templates/](templates/)
 
 This directory contains templates that can be manually copied over to other repos and committed.
 
-Some of these files need to exist at the time of Semaphore's `checkout` which is why they can't be automatically copied
-over later.
+The directory structure matches the standard `.semaphore` directory in each repo.
+
+Some of these files need to exist at the time of Semaphore's `checkout` which is why they can't be automatically copied over later.
 
 ## Setup
 
@@ -22,11 +23,12 @@ touch .semaphore/bin/setup-shared-config
 chmod +x .semaphore/bin/*
 ```
 
-Contents of [.semaphore/bin/setup-shared-config](https://github.com/generalassembly/shared_configs/tree/master/semaphore/templates/bin/setup-shared-config):
+Contents of [.semaphore/bin/setup-shared-config](templates/bin/setup-shared-config):
 
 ``` bash
 #!/usr/bin/env -S bash -e
 
+# see this repo for all available shared config:
 # https://github.com/generalassembly/shared_configs/tree/master/semaphore
 
 SHARED_CONFIG_REPO=https://github.com/generalassembly/shared_configs
@@ -53,5 +55,4 @@ $SEMAPHORE_BIN_DIR/setup-shared-config # insert this line after the SEMAPHORE_BI
 export PATH=./bin:$PATH:$SEMAPHORE_BIN_DIR
 ```
 
-The script will copy the contents of [.semaphore](https://github.com/generalassembly/shared_configs/tree/master/semaphore/.semaphore)
-into the repo's `.semaphore` directory without overwriting any existing files.
+The script will copy the contents of [.semaphore](.semaphore) into the repo's `.semaphore` directory without overwriting any existing files.

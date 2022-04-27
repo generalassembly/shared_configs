@@ -1,5 +1,6 @@
 #!/usr/bin/env -S bash -e
 
+# see this repo for all available shared config:
 # https://github.com/generalassembly/shared_configs/tree/master/semaphore
 
 SHARED_CONFIG_REPO=https://github.com/generalassembly/shared_configs
