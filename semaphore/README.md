@@ -1,5 +1,7 @@
 # Shared Semaphore Config
 
+## Setup
+
 Each repo needs a `setup-shared-config` Semaphore script:
 
 ``` bash
@@ -7,7 +9,7 @@ touch .semaphore/bin/setup-shared-config
 chmod +x .semaphore/bin/*
 ```
 
-Contents of `.semaphore/bin/setup-shared-config`:
+Contents of [.semaphore/bin/setup-shared-config](https://github.com/generalassembly/shared_configs/tree/master/semaphore/templates/bin/setup-shared-config):
 
 ``` bash
 #!/usr/bin/env -S bash -e
@@ -37,3 +39,6 @@ $SEMAPHORE_BIN_DIR/setup-shared-config # insert this line after the SEMAPHORE_BI
 
 export PATH=./bin:$PATH:$SEMAPHORE_BIN_DIR
 ```
+
+The script will copy the contents of [.semaphore](https://github.com/generalassembly/shared_configs/tree/master/semaphore/.semaphore)
+into the repo's `.semaphore` directory without overwriting any existing files.

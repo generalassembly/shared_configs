@@ -1,0 +1,11 @@
+#!/usr/bin/env -S bash -e
+
+# https://github.com/generalassembly/shared_configs/tree/master/semaphore
+
+SHARED_CONFIG_REPO=https://github.com/generalassembly/shared_configs
+REMOTE_SHARED_CONFIG_DIR=$SHARED_CONFIG_REPO/trunk/semaphore/.semaphore
+LOCAL_SHARED_CONFIG_DIR=.semaphore-shared
+
+svn export $REMOTE_SHARED_CONFIG_DIR $LOCAL_SHARED_CONFIG_DIR
+
+cp --recursive --no-clobber $LOCAL_SHARED_CONFIG_DIR/* .semaphore/
