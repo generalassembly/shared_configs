@@ -1,5 +1,18 @@
 # Shared Semaphore Config
 
+## [.semaphore/](https://github.com/generalassembly/shared_configs/tree/master/semaphore/.semaphore)
+
+This directory contains shared config that can be automatically copied over to other repos.
+
+The directory structure matches the standard `.semaphore` directory in each repo.
+
+## [templates/](https://github.com/generalassembly/shared_configs/tree/master/semaphore/templates)
+
+This directory contains templates that can be manually copied over to other repos and committed.
+
+Some of these files need to exist at the time of Semaphore's `checkout` which is why they can't be automatically copied
+over later.
+
 ## Setup
 
 Each repo needs a `setup-shared-config` Semaphore script:
