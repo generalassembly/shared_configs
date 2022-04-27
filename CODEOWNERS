@@ -1,18 +1,1 @@
-* @generalassembly/infrastructure
-
-# Base config files
-dev_tools/rubocop/base.yml @generalassembly/infrastructure @generalassembly/edtech @generalassembly/martech @generalassembly/engineering-support
-dev_tools/rubocop/rails-base.yml @generalassembly/infrastructure @generalassembly/edtech @generalassembly/martech @generalassembly/engineering-support
-dev_tools/rubocop/rspec-base.yml @generalassembly/infrastructure @generalassembly/edtech @generalassembly/martech @generalassembly/engineering-support
-
-# Infrastructure config files
-dev_tools/rubocop/infrastructure.yml @generalassembly/infrastructure
-dev_tools/rubocop/infrastructure-rails.yml @generalassembly/infrastructure
-
-# Edtech config files
-dev_tools/rubocop/edtech.yml @generalassembly/edtech
-dev_tools/rubocop/edtech-rails.yml @generalassembly/edtech
-
-# Martech config files
-dev_tools/rubocop/martech.yml @generalassembly/martech
-dev_tools/rubocop/martech-rails.yml @generalassembly/martech
+* @generalassembly/engineering
