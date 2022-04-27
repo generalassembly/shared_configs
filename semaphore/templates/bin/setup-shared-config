@@ -7,6 +7,10 @@ SHARED_CONFIG_REPO=https://github.com/generalassembly/shared_configs
 REMOTE_SHARED_CONFIG_DIR=$SHARED_CONFIG_REPO/trunk/semaphore/.semaphore
 LOCAL_SHARED_CONFIG_DIR=.semaphore-shared
 
+# NOTE: you can test a custom branch of shared_configs
+# uncomment the line below and replace xyz with the name of your branch
+# REMOTE_SHARED_CONFIG_DIR=$SHARED_CONFIG_REPO/branches/xyz/semaphore/.semaphore
+
 svn export $REMOTE_SHARED_CONFIG_DIR $LOCAL_SHARED_CONFIG_DIR
 
 cp --recursive --no-clobber $LOCAL_SHARED_CONFIG_DIR/. .semaphore/

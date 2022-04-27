@@ -1,0 +1,40 @@
+version: v1.0
+
+name: brakeman
+
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+
+auto_cancel:
+  running:
+    when: "true"
+
+global_job_config:
+  secrets:
+    - name: global-secrets
+
+  env_vars:
+    - name: BRAKEMAN_REPORT_HTML
+      value: brakeman.html
+
+  prologue:
+    commands:
+      - checkout
+      - source .semaphore/bin/setup-repo
+
+blocks:
+  - name: Brakeman Report
+    task:
+      jobs:
+        - name: brakeman
+          commands:
+            - restore-gems
+
+            - run-brakeman
+
+      epilogue:
+        always:
+          commands:
+            - store-brakeman-report
