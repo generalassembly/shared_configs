@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+test-results publish test-summaries --parser rspec
