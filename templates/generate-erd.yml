@@ -1,0 +1,34 @@
+version: v1.0
+
+name: generate-erd
+
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+
+auto_cancel:
+  running:
+    when: "true"
+
+global_job_config:
+  secrets:
+    - name: global-secrets
+
+  prologue:
+    commands:
+      - checkout
+      - source .semaphore/bin/setup-repo
+
+blocks:
+  - name: Entity-Relationship Diagram
+    task:
+      jobs:
+        - name: erd
+          commands:
+            - install-package graphviz
+            - restore-gems
+
+            - setup-db
+
+            - generate-erd
