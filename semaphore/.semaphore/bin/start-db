@@ -1,0 +1,8 @@
+#!/usr/bin/env -S bash -e
+
+if [[ -z $PG_VERSION ]]; then
+  echo "ERROR: PG_VERSION must be exported in .semaphore/bin/setup-repo"
+  exit 1
+fi
+
+sem-service start postgres $PG_VERSION
