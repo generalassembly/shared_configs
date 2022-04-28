@@ -1,0 +1,32 @@
+version: v1.0
+
+name: store-backup-gems
+
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+
+auto_cancel:
+  running:
+    when: "true"
+
+global_job_config:
+  secrets:
+    - name: global-secrets
+
+  prologue:
+    commands:
+      - checkout
+      - source .semaphore/bin/setup-repo
+
+blocks:
+  - name: Store backup gems
+    task:
+      jobs:
+        - name: Cache
+          commands:
+            - restore-gems
+
+            - cache delete $BACKUP_GEMS_CACHE_KEY
+            - cache store $BACKUP_GEMS_CACHE_KEY $BUNDLE_PATH
