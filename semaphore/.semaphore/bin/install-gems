@@ -1,0 +1,5 @@
+#!/usr/bin/env -S bash -e
+
+restore-gems
+bundle install
+store-gems
