@@ -3,4 +3,4 @@
 bundle exec brakeman \
   --run-all-checks \
   -o /dev/stdout --color \
-  -o $BRAKEMAN_REPORT_HTML
+  -o brakeman.html

@@ -15,10 +15,6 @@ global_job_config:
   secrets:
     - name: global-secrets
 
-  env_vars:
-    - name: BRAKEMAN_REPORT_HTML
-      value: brakeman.html
-
   prologue:
     commands:
       - checkout
