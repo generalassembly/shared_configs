@@ -8,4 +8,6 @@ else
   ARTIFACT_LEVEL=workflow
 fi
 
-artifact push $ARTIFACT_LEVEL erd.pdf -d ERD-$SEMAPHORE_PROJECT_NAME.pdf -f
+artifact push $ARTIFACT_LEVEL erd.pdf \
+  --destination ERD-$SEMAPHORE_PROJECT_NAME.pdf \
+  --force

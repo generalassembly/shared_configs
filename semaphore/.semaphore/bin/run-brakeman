@@ -2,5 +2,5 @@
 
 bundle exec brakeman \
   --run-all-checks \
-  -o /dev/stdout --color \
-  -o brakeman.html
+  --output /dev/stdout --color \
+  --output brakeman.html

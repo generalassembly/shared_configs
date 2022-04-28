@@ -6,4 +6,4 @@ else
   ARTIFACT_LEVEL=workflow
 fi
 
-artifact push $ARTIFACT_LEVEL brakeman.html -f
+artifact push $ARTIFACT_LEVEL brakeman.html --force
