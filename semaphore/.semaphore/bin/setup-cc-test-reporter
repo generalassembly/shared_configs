@@ -1,7 +1,7 @@
 #!/usr/bin/env -S bash -e
 
 if [[ -z $SEMAPHORE_BIN_DIR ]]; then
-  echo "ERROR: SEMAPHORE_BIN_DIR must be exported in .semaphore/bin/setup-repo"
+  echo -e "\e[31mERROR:\e[0m SEMAPHORE_BIN_DIR must be exported in .semaphore/bin/setup-repo"
   exit 1
 fi
 

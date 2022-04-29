@@ -1,7 +1,7 @@
 #!/usr/bin/env -S bash -e
 
 if [[ ! -d test-summaries ]]; then
-  echo "ERROR: no test results found"
+  echo -e "\e[31mERROR:\e[0m no test results found"
   exit 1
 fi
 
