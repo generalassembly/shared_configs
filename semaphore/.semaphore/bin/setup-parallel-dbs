@@ -2,4 +2,4 @@
 
 start-db
 
-bundle exec rake db:setup
+bundle exec rake parallel:setup
