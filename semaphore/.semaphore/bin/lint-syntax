@@ -2,4 +2,5 @@
 
 bundle exec rubocop \
   --force-default-config \
-  --only Lint/Syntax
+  --only Lint/Syntax \
+  --parallel
