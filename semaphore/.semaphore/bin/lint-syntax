@@ -1,0 +1,5 @@
+#!/usr/bin/env -S bash -e
+
+bundle exec rubocop \
+  --force-default-config \
+  --only Lint/Syntax

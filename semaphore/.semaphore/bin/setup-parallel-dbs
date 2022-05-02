@@ -1,0 +1,5 @@
+#!/usr/bin/env -S bash -e
+
+start-db
+
+bundle exec rake parallel:setup

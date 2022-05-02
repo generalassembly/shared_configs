@@ -1,6 +1,6 @@
-#!/usr/bin/env bash
+#!/usr/bin/env -S bash -e
 
 bundle exec brakeman \
   --run-all-checks \
-  -o /dev/stdout --color \
-  -o $BRAKEMAN_REPORT_HTML
+  --output /dev/stdout --color \
+  --output brakeman.html

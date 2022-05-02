@@ -1,6 +1,6 @@
 version: v1.0
 
-name: brakeman
+name: store-backup-gems
 
 agent:
   machine:
@@ -21,16 +21,12 @@ global_job_config:
       - source .semaphore/bin/setup-repo
 
 blocks:
-  - name: Brakeman Report
+  - name: Store backup gems
     task:
       jobs:
-        - name: brakeman
+        - name: Cache
           commands:
             - restore-gems
 
-            - run-brakeman
-
-      epilogue:
-        always:
-          commands:
-            - store-brakeman-report
+            - cache delete $BACKUP_GEMS_CACHE_KEY
+            - cache store $BACKUP_GEMS_CACHE_KEY $BUNDLE_PATH

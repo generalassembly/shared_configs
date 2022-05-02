@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env -S bash -e
 
 if [[ $SEMAPHORE_GIT_BRANCH =~ ^(master|main)$ ]]; then
   ARTIFACT_LEVEL=project
@@ -6,4 +6,4 @@ else
   ARTIFACT_LEVEL=workflow
 fi
 
-artifact push $ARTIFACT_LEVEL $BRAKEMAN_REPORT_HTML -f
+artifact push $ARTIFACT_LEVEL brakeman.html --force

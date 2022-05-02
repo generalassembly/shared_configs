@@ -1,0 +1,15 @@
+#!/usr/bin/env -S bash -e
+
+if [[ -z $SEMAPHORE_BIN_DIR ]]; then
+  echo -e "\e[31mERROR:\e[0m SEMAPHORE_BIN_DIR must be exported in .semaphore/bin/setup-repo"
+  exit 1
+fi
+
+pushd $SEMAPHORE_BIN_DIR
+
+curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > cc-test-reporter
+chmod +x cc-test-reporter
+
+popd
+
+cc-test-reporter before-build
