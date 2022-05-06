@@ -2,6 +2,7 @@
 
 if [[ -z $BACKUP_GEMS_CACHE_KEY || -z $GEMS_CACHE_KEY ]]; then
   echo -e "\e[31mERROR:\e[0m BACKUP_GEMS_CACHE_KEY and GEMS_CACHE_KEY must be exported in .semaphore/bin/setup-repo"
+  exit 1
 fi
 
 cache restore $GEMS_CACHE_KEY,$BACKUP_GEMS_CACHE_KEY

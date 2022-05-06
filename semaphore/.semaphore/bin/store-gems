@@ -2,6 +2,7 @@
 
 if [[ -z $BUNDLE_PATH || -z $GEMS_CACHE_KEY ]]; then
   echo -e "\e[31mERROR:\e[0m BUNDLE_PATH and GEMS_CACHE_KEY must be exported in .semaphore/bin/setup-repo"
+  exit 1
 fi
 
 cache store $GEMS_CACHE_KEY $BUNDLE_PATH
