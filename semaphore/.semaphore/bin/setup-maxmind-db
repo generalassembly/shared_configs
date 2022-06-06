@@ -1,0 +1,13 @@
+#!/usr/bin/env -S bash -e
+
+if [[ -z $MAXMIND_CACHE_KEY || -z $MAXMIND_DB ]]; then
+  echo -e "\e[31mERROR:\e[0m MAXMIND_CACHE_KEY and MAXMIND_DB must be exported in .semaphore/bin/setup-repo"
+  exit 1
+fi
+
+restore-maxmind-db
+
+if [[ ! -f $MAXMIND_DB ]]; then
+  rake maxmind:install
+  cache store $MAXMIND_CACHE_KEY $MAXMIND_DB
+fi
