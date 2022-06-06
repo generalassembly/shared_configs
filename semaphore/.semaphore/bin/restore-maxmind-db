@@ -1,0 +1,8 @@
+#!/usr/bin/env -S bash -e
+
+if [[ -z $MAXMIND_CACHE_KEY ]]; then
+  echo -e "\e[31mERROR:\e[0m MAXMIND_CACHE_KEY must be exported in .semaphore/bin/setup-repo"
+  exit 1
+fi
+
+cache restore $MAXMIND_CACHE_KEY
