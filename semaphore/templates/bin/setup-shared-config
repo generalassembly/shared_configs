@@ -1,16 +1,25 @@
 #!/usr/bin/env -S bash -e
 
-# see this repo for all available shared config:
-# https://github.com/generalassembly/shared_configs/tree/master/semaphore
+# Repository URL, Branch and the path of the directory to copy
+SHARED_CONFIG_REPO=git@github.com:generalassembly/shared_configs.git
+# NOTE: By default, the master branch is used. If you want to use a different
+# branch, replace the branch name with the name of the branch you want to use.
+SHARED_CONFIG_BRANCH=master
+SHARED_CONFIG_DIR_PATH=semaphore/.semaphore
 
-SHARED_CONFIG_REPO=https://github.com/generalassembly/shared_configs
-REMOTE_SHARED_CONFIG_DIR=$SHARED_CONFIG_REPO/trunk/semaphore/.semaphore
-LOCAL_SHARED_CONFIG_DIR=.semaphore-shared
+# Local directory names
+CLONE_DIR=.semaphore-shared
+LOCAL_SHARED_CONFIG_DIR=.semaphore
 
-# NOTE: you can test a custom branch of shared_configs
-# uncomment the line below and replace xyz with the name of your branch
-# REMOTE_SHARED_CONFIG_DIR=$SHARED_CONFIG_REPO/branches/xyz/semaphore/.semaphore
+# Clone the repository
+git clone --depth=1 -b $SHARED_CONFIG_BRANCH $SHARED_CONFIG_REPO $CLONE_DIR
 
-svn export $REMOTE_SHARED_CONFIG_DIR $LOCAL_SHARED_CONFIG_DIR
+# Navigate to the cloned directory
+cd $CLONE_DIR
 
-cp --recursive --no-clobber $LOCAL_SHARED_CONFIG_DIR/. .semaphore/
+# Copy the specific directory into the Semaphore config directory
+cp -r $SHARED_CONFIG_DIR_PATH/* $PWD/../$LOCAL_SHARED_CONFIG_DIR/
+
+# Clean up: Go back to the original directory and remove the cloned repo
+cd ..
+rm -rf $CLONE_DIR
