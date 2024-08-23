@@ -18,6 +18,7 @@ git clone --depth=1 -b $SHARED_CONFIG_BRANCH $SHARED_CONFIG_REPO $CLONE_DIR
 cd $CLONE_DIR
 
 # Copy the specific directory into the Semaphore config directory
+shopt -s dotglob
 cp -r $SHARED_CONFIG_DIR_PATH/* $PWD/../$LOCAL_SHARED_CONFIG_DIR/
 
 # Clean up: Go back to the original directory and remove the cloned repo
